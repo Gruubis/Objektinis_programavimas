@@ -21,36 +21,24 @@ namespace GUI.Data
         }
         public void Register(User user, string username) 
         {
-            try
-            {
+            if (user.GetUserName() == username)
+                throw new Exception("Use with this username already exists!");
 
-                string sql = "insert into users(name, lastname, birthdate, username, password, isAdmin) " +
-                    "values (@name, @lastname, @birthdate, @username, @password, @isAdmin) ";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@name", user.GetName());
-                cmd.Parameters.AddWithValue("@lastname", user.GetLastName());
-                cmd.Parameters.AddWithValue("@birthdate", user.GetBirthDate());
-                cmd.Parameters.AddWithValue("@username", user.GetUserName());
-                cmd.Parameters.AddWithValue("@password", user.GetPassword());
-                cmd.Parameters.AddWithValue("@isAdmin", user.GetAdmin());
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                SqlCommand cmd2 = new SqlCommand("select id from users", conn);
-                conn.Open();
-                using (SqlDataReader reader = cmd2.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        id = int.Parse(reader["id"].ToString());
-                    }
-                }
-                conn.Close();
-            }
-            catch (Exception exc)
-            {
-                throw new Exception(exc.Message);
-            }
+            string sql = "insert into users(name, lastname, birthdate, username, password, isAdmin) " +
+                "values (@name, @lastname, @birthdate, @username, @password, @isAdmin) ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@name", user.GetName());
+            cmd.Parameters.AddWithValue("@lastname", user.GetLastName());
+            cmd.Parameters.AddWithValue("@birthdate", user.GetBirthDate());
+            cmd.Parameters.AddWithValue("@username", user.GetUserName());
+            cmd.Parameters.AddWithValue("@password", user.GetPassword());
+            cmd.Parameters.AddWithValue("@isAdmin", user.GetAdmin());
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+
+           
         }
 
         public User Login(string username, string password)
@@ -145,17 +133,21 @@ namespace GUI.Data
         {
             if (pasword == LoggedInUser.GetPassword())
             {
-               if(newPassword != "" && newPassword != LoggedInUser.GetPassword())
+                if (newPassword != "" && newPassword != LoggedInUser.GetPassword())
                 {
-            string sql = "update users set password=@newPassword where username=@username";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@newPassword", newPassword);
-            cmd.Parameters.AddWithValue("@username", LoggedInUser.GetUserName());
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-                } 
+                    string sql = "update users set password=@newPassword where username=@username";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@newPassword", newPassword);
+                    cmd.Parameters.AddWithValue("@username", LoggedInUser.GetUserName());
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                else
+                    throw new Exception("password cannot be empty or match previous one");
             }
+            else
+                throw new Exception("password didnt match");
 
         }
     }
