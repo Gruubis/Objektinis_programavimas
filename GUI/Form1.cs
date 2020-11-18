@@ -12,7 +12,7 @@ using GUI.Data;
 namespace GUI
 {
     public partial class Form1 : Form
-    {
+    {   
         UsersRepository repository = new UsersRepository();
         public Form1()
         {
@@ -24,8 +24,7 @@ namespace GUI
         {
             try
             { 
-                User user = new User(textBox1.Text, textBox2.Text, dateTimePicker1.Value, textBox3.Text, textBox4.Text, false);
-                
+                User user = new User(textBox1.Text, textBox2.Text, dateTimePicker1.Value, textBox3.Text, textBox4.Text, "false");
                 repository.Register(user, textBox3.Text);
                 MessageBox.Show("Registered");
                 Close();

@@ -27,12 +27,11 @@ namespace GUI
             pictureBox1.Image = GUI.Data.UsersRepository.LoggedInUser.GetImage();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
-            label4.Text = GUI.Data.UsersRepository.LoggedInUser.GetFullName();
+            label4.Text = Data.UsersRepository.LoggedInUser.GetFullName();
             label5.Text = GUI.Data.UsersRepository.LoggedInUser.GetAge().ToString();
             label6.Text = GUI.Data.UsersRepository.LoggedInUser.GetUserName();
             label8.Text = GUI.Data.UsersRepository.LoggedInUser.GetBirthDate().ToString();
-            button3.Visible = GUI.Data.UsersRepository.LoggedInUser.GetAdmin();
+            button3.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
 
         }
 

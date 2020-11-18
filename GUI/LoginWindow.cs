@@ -23,7 +23,8 @@ namespace GUI
         { 
             try
             {
-                GUI.Data.UsersRepository.LoggedInUser = repository.Login(textBox1.Text, textBox2.Text);
+
+                GUI.Data.UsersRepository.LoggedInUser = repository.Login(textBox1.Text, textBox2.Text); 
                 UserWindow uw = new UserWindow();
                 uw.ShowDialog();
                 Close();

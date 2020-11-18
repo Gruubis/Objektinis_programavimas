@@ -33,22 +33,26 @@
             this.Date_of_birth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Password = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Admin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.Name,
             this.Date_of_birth,
             this.Username,
-            this.Password});
+            this.Password,
+            this.Admin});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(-1, 12);
+            this.listView1.Location = new System.Drawing.Point(2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(503, 389);
+            this.listView1.Size = new System.Drawing.Size(608, 389);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -74,6 +78,11 @@
             this.Password.Text = "Password";
             this.Password.Width = 100;
             // 
+            // Admin
+            // 
+            this.Admin.Text = "Admin";
+            this.Admin.Width = 56;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 409);
@@ -94,11 +103,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // id
+            // 
+            this.id.Text = "id";
+            this.id.Width = 45;
+            // 
             // UsersListWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 450);
+            this.ClientSize = new System.Drawing.Size(604, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
@@ -117,5 +131,7 @@
         private System.Windows.Forms.ColumnHeader Password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader Admin;
+        private System.Windows.Forms.ColumnHeader id;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GUI
 {
     public partial class ChangePasswordWindow : Form
     {
+        private GUI.Data.UsersRepository repository = new UsersRepository();
         public ChangePasswordWindow()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace GUI
         {
             try
             {
-                GUI.Data.UsersRepository.LoggedInUser.ChangePassword(textBox1.Text,textBox2.Text);
+                repository.ChangePassword(textBox1.Text,textBox2.Text);
                 MessageBox.Show("Password changed succesfully!");
                 this.Close();
             }

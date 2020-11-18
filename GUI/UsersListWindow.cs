@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UsersListWindow : Form
     {
-        UsersRepository repository = new UsersRepository();
+        private UsersRepository repository = new UsersRepository();
         public UsersListWindow()
         {
             InitializeComponent();
@@ -24,11 +24,11 @@ namespace GUI
 
         private void UsersListWindow_Load(object sender, EventArgs e)
         {
-            var people = GUI.Data.UsersRepository.GetUsers();
+            var people = repository.GetUsers();
             listView1.Items.Clear();
             foreach( var User in people)
             {
-                var row = new string[] { User.GetFullName(), User.GetBirthDate().ToString(), User.GetUserName(), User.GetPassword() };
+                var row = new string[] {User.GetUserId().ToString(), User.GetFullName(), User.GetBirthDate().ToString(), User.GetUserName(), User.GetPassword(), User.GetAdmin().ToString() };
                 var lvi = new ListViewItem(row);
 
                 lvi.Tag = User;

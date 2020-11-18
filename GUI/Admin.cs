@@ -8,7 +8,7 @@ namespace GUI
 {
     class Admin : User
     {
-        public Admin(string name, string lastName, DateTime birthDate, string username, string password, bool IsAdmin) : base(name, lastName, birthDate, username, password, IsAdmin)
+        public Admin(string name, string lastName, DateTime birthDate, string username, string password, string IsAdmin) : base(name, lastName, birthDate, username, password, IsAdmin)
         {
 
         }

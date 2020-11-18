@@ -13,10 +13,11 @@ namespace GUI
     {
         protected string username;
         protected string password;
-        protected bool IsAdmin;
+        protected string IsAdmin;
+        protected int id;
         protected Image picture;
 
-        public User(string name, string lastName, DateTime birthDate, string username, string password, bool IsAdmin) : base(name, lastName, birthDate)
+        public User(string name, string lastName, DateTime birthDate, string username, string password, string IsAdmin) : base(name, lastName, birthDate)
         {
             /*if (GetAge() < 14)
                 throw new Exception("must be atleast 14 years haha old to register");*/
@@ -48,14 +49,7 @@ namespace GUI
         {
             return password;
         }
-        public void ChangePassword(string password, string newPassword)
-        {
-            if(password != GUI.Data.UsersRepository.LoggedInUser.password)
-            {
-                throw new Exception("Password didnt match");
-            }
-            GUI.Data.UsersRepository.LoggedInUser.password = newPassword;
-        }
+        
        
         public Image setImage(Image profilePic)
         {
@@ -66,9 +60,17 @@ namespace GUI
         {
             return picture;
         }
-        public bool GetAdmin()
+        public string GetAdmin()
         {
             return IsAdmin;
+        }
+        public void SetUserId(int usrId)
+        {
+           id = usrId;
+        }
+        public int GetUserId()
+        {
+            return id;
         }
     }
 }
