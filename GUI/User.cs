@@ -15,7 +15,7 @@ namespace GUI
         protected string password;
         protected string IsAdmin;
         protected int id;
-        protected Image picture;
+        protected string picture;
 
         public User(string name, string lastName, DateTime birthDate, string username, string password, string IsAdmin) : base(name, lastName, birthDate)
         {
@@ -51,12 +51,12 @@ namespace GUI
         }
         
        
-        public Image setImage(Image profilePic)
+        public void setImage(string profilePic)
         {
             picture = profilePic;
-            return picture;
+            
         }
-        public Image GetImage()
+        public string GetImage()
         {
             return picture;
         }
@@ -72,5 +72,6 @@ namespace GUI
         {
             return id;
         }
+        
     }
 }

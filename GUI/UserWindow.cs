@@ -12,6 +12,7 @@ namespace GUI
 {
     public partial class UserWindow : Form
     {
+        private GUI.Data.UsersRepository repository = new GUI.Data.UsersRepository();
         public UserWindow()
         {
             InitializeComponent();
@@ -24,15 +25,21 @@ namespace GUI
 
         private void UserWindow_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = GUI.Data.UsersRepository.LoggedInUser.GetImage();
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (GUI.Data.UsersRepository.LoggedInUser.GetImage() == "")
+            {
+                pictureBox1.Image = Image.FromFile(@"C:\Users\rolik\source\repos\GUI\GUI\Img\profile.png");
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(@GUI.Data.UsersRepository.LoggedInUser.GetImage());
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            label4.Text = Data.UsersRepository.LoggedInUser.GetFullName();
-            label5.Text = GUI.Data.UsersRepository.LoggedInUser.GetAge().ToString();
-            label6.Text = GUI.Data.UsersRepository.LoggedInUser.GetUserName();
-            label8.Text = GUI.Data.UsersRepository.LoggedInUser.GetBirthDate().ToString();
-            button3.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
-
+                label4.Text = Data.UsersRepository.LoggedInUser.GetFullName();
+                label5.Text = GUI.Data.UsersRepository.LoggedInUser.GetAge().ToString();
+                label6.Text = GUI.Data.UsersRepository.LoggedInUser.GetUserName();
+                label8.Text = GUI.Data.UsersRepository.LoggedInUser.GetBirthDate().ToString();
+                button3.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,16 +59,17 @@ namespace GUI
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                Image newImage = Image.FromFile(ofd.FileName);
-                pictureBox1.Image = GUI.Data.UsersRepository.LoggedInUser.setImage(newImage);
-
+               
+                string path = ofd.FileName;
+                pictureBox1.Image = Image.FromFile(ofd.FileName);
+                repository.SavePicture(path,GUI.Data.UsersRepository.LoggedInUser.GetUserId());
             }
         }
 
        
     private void ChangeImageWindow_Closed(object sender, EventArgs e)
         {
-            pictureBox1.Image = GUI.Data.UsersRepository.LoggedInUser.GetImage();
+            pictureBox1.Image = Image.FromFile(GUI.Data.UsersRepository.LoggedInUser.GetImage());
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -74,6 +82,35 @@ namespace GUI
         {
             UsersListWindow ulw = new UsersListWindow();
             ulw.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ItemListWindow ilw = new ItemListWindow();
+            ilw.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            WishlistWindow wlw = new WishlistWindow();
+            wlw.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            addCategoryWindowcs acw = new addCategoryWindowcs();
+            acw.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AddItemWindow aiw = new AddItemWindow();
+            aiw.ShowDialog();
         }
     }
 }

@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,12 +47,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCategoryWindowcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addCategoryWindowcs.Designer.cs">
+      <DependentUpon>addCategoryWindowcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddItemWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItemWindow.Designer.cs">
+      <DependentUpon>AddItemWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="ChangePasswordWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangePasswordWindow.Designer.cs">
       <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="commentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="commentWindow.Designer.cs">
+      <DependentUpon>commentWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\UsersRepository.cs" />
     <Compile Include="Form1.cs">
@@ -59,6 +79,31 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemListWindow.Designer.cs">
+      <DependentUpon>ItemListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsAdminControl.Designer.cs">
+      <DependentUpon>ItemsAdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsPublicControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsPublicControl.Designer.cs">
+      <DependentUpon>ItemsPublicControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsUserControl.Designer.cs">
+      <DependentUpon>ItemsUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
@@ -88,14 +133,47 @@
     <Compile Include="UserWindow.Designer.cs">
       <DependentUpon>UserWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="wishListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="wishListUserControl.Designer.cs">
+      <DependentUpon>wishListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WishlistWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WishlistWindow.Designer.cs">
+      <DependentUpon>WishlistWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addCategoryWindowcs.resx">
+      <DependentUpon>addCategoryWindowcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddItemWindow.resx">
+      <DependentUpon>AddItemWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordWindow.resx">
       <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="commentWindow.resx">
+      <DependentUpon>commentWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeWindow.resx">
       <DependentUpon>HomeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemListWindow.resx">
+      <DependentUpon>ItemListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsAdminControl.resx">
+      <DependentUpon>ItemsAdminControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsPublicControl.resx">
+      <DependentUpon>ItemsPublicControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsUserControl.resx">
+      <DependentUpon>ItemsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
@@ -115,6 +193,12 @@
     <EmbeddedResource Include="UserWindow.resx">
       <DependentUpon>UserWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wishListUserControl.resx">
+      <DependentUpon>wishListUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WishlistWindow.resx">
+      <DependentUpon>WishlistWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,7 +213,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Img\Beaster_z_sport.png" />
+    <Content Include="Img\Canon_camera.png" />
+    <Content Include="Img\Huawei_p30-pro.png" />
+    <Content Include="Img\12_phone.png" />
+    <Content Include="Img\Macbook_pro.png" />
+    <Content Include="Img\Microsoft_surface_pro.png" />
+    <Content Include="Img\nike.png" />
+    <Content Include="Img\Nikon_coolpix.png" />
     <Content Include="Img\profile.png" />
+    <Content Include="Img\samsung_s20Ultra.png" />
+    <Content Include="Img\xiaomi-mi-scooter-m365-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

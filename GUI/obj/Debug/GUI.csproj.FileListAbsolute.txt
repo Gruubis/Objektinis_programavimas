@@ -13,3 +13,12 @@ C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.LoginWindow.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.UserWindow.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ChangePasswordWindow.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.UsersListWindow.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ItemListWindow.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ItemsPublicControl.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ItemsUserControl.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.wishListUserControl.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.WishlistWindow.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.commentWindow.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ItemsAdminControl.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.addCategoryWindowcs.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.AddItemWindow.resources
