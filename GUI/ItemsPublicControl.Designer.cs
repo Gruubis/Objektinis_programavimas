@@ -51,7 +51,7 @@ namespace GUI
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(238, 15);
+            this.TitleLabel.Location = new System.Drawing.Point(288, 12);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(57, 20);
             this.TitleLabel.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace GUI
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(373, 177);
+            this.PriceLabel.Location = new System.Drawing.Point(465, 180);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(51, 16);
             this.PriceLabel.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace GUI
             // 
             // DescriptionLabel
             // 
-            this.DescriptionLabel.Location = new System.Drawing.Point(187, 65);
+            this.DescriptionLabel.Location = new System.Drawing.Point(187, 71);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(237, 57);
             this.DescriptionLabel.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 179);
+            this.label1.Location = new System.Drawing.Point(422, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 4;
@@ -92,14 +92,14 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ItemsPublicControl";
-            this.Size = new System.Drawing.Size(463, 210);
+            this.Size = new System.Drawing.Size(543, 210);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

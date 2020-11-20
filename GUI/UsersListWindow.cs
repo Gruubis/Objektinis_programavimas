@@ -47,7 +47,7 @@ namespace GUI
             {
                 if (listView1.FocusedItem.Selected == true)
                 {
-                    repository.RemUser(listView1.SelectedItems[0].SubItems[2].Text);
+                    repository.RemUser(int.Parse(listView1.SelectedItems[0].SubItems[0].Text),listView1.SelectedItems[0].SubItems[3].Text);
                     MessageBox.Show("User deleted");
                     Close();
                 }

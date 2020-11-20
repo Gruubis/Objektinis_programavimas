@@ -39,14 +39,14 @@ namespace GUI
             Button button = (Button)sender;
             Category category = (Category)button.Tag;
 
-            if (UsersRepository.LoggedInUser.Equals(null))
+            if (UsersRepository.LoggedInUser == null)
             {
                 foreach (Item item in category.Items)
                 {
                     ItemsPublicControl ipc = new ItemsPublicControl(item);
                     flowLayoutPanel2.Controls.Add(ipc);
                 }
-                
+                return;
             }
             if (GUI.Data.UsersRepository.LoggedInUser.GetAdmin() == "false")
             {
@@ -55,6 +55,7 @@ namespace GUI
                     ItemsUserControl iuc = new ItemsUserControl(item);
                     flowLayoutPanel2.Controls.Add(iuc);
                 }
+                return;
             }
             else
             {

@@ -67,6 +67,13 @@
     <Compile Include="ChangePasswordWindow.Designer.cs">
       <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comment.cs" />
+    <Compile Include="CommentsListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentsListWindow.Designer.cs">
+      <DependentUpon>CommentsListWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="commentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordWindow.resx">
       <DependentUpon>ChangePasswordWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentsListWindow.resx">
+      <DependentUpon>CommentsListWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="commentWindow.resx">
       <DependentUpon>commentWindow.cs</DependentUpon>

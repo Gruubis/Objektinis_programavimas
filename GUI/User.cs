@@ -19,8 +19,8 @@ namespace GUI
 
         public User(string name, string lastName, DateTime birthDate, string username, string password, string IsAdmin) : base(name, lastName, birthDate)
         {
-            /*if (GetAge() < 14)
-                throw new Exception("must be atleast 14 years haha old to register");*/
+          /* if (GetAge() < 14)
+                throw new Exception("must be atleast 14 years old to register");*/
             if (username == "")
                 throw new Exception("Username cannot be empty");
             if (password == "")

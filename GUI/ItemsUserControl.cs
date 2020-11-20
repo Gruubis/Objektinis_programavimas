@@ -25,6 +25,8 @@ namespace GUI
             InitializeComponent();
 
         }
+
+ 
         private void TitleLabel_Click(object sender, EventArgs e)
         {
 

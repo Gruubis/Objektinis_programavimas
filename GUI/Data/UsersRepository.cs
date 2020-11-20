@@ -14,7 +14,7 @@ namespace GUI.Data
 {
     class UsersRepository
     {
-        public static User LoggedInUser = null;
+        public static User LoggedInUser;
         private SqlConnection conn;
         public byte[] Content { get; set; }
         public UsersRepository()
@@ -23,6 +23,7 @@ namespace GUI.Data
         }
         public void Register(User user, string username)
         {
+
             var people = GetUsers();
             foreach (var User in people)
             {
@@ -115,7 +116,7 @@ namespace GUI.Data
 
             }
         }
-        public void RemUser(string usr)
+        public void RemUser(int id, string usr)
         {
             List<User> usersList = GetUsers();
             foreach (User user in usersList)
@@ -125,11 +126,10 @@ namespace GUI.Data
                     throw new Exception($"User {usr} is Admin. ");
                 }
             }
-            string sql = "Delete from users where username=@usr and isAdmin=@admin";
+            string sql = "Delete from users where id=@id";
             SqlCommand cmd = new SqlCommand(sql, conn);
             conn.Open();
-            cmd.Parameters.AddWithValue("@usr", usr);
-            cmd.Parameters.AddWithValue("@admin", "false");
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -312,6 +312,17 @@ namespace GUI.Data
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void DeleteComment(int userid, int itemid, string text)
+        {
+            string sql = "delete from comments where userid=@userid and itemid=@itemid and text=@text";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@userid", userid);
+            cmd.Parameters.AddWithValue("@itemid", itemid);
+            cmd.Parameters.AddWithValue("@text", text);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public void DeleteItem(int itemId)
         {
             string sql = "delete from items where id=@itemid";
@@ -343,6 +354,25 @@ namespace GUI.Data
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+        public List<Comment> GetCommentsList()
+        {
+            List<Comment> comments = new List<Comment>();
+            string sql = "select id, itemid,date, text from comments join users on users.id = comments.userid";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string date = reader["date"].ToString();
+                string text = reader["text"].ToString();
+                int id = int.Parse(reader["id"].ToString());
+                int itemid = int.Parse(reader["itemid"].ToString());
+                comments.Add(new Comment(id, text, date, itemid));
+            }
+            conn.Close();
+            return comments;
         }
     }
 }

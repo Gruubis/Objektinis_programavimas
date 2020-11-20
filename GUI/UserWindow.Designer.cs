@@ -45,12 +45,13 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(374, 12);
+            this.button1.Location = new System.Drawing.Point(241, 159);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 53);
             this.button1.TabIndex = 0;
@@ -60,7 +61,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(374, 130);
+            this.button2.Location = new System.Drawing.Point(329, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 54);
             this.button2.TabIndex = 5;
@@ -155,7 +156,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(374, 71);
+            this.button3.Location = new System.Drawing.Point(385, 324);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 53);
             this.button3.TabIndex = 15;
@@ -169,7 +170,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 37);
             this.button4.TabIndex = 16;
-            this.button4.Text = "Prekiu sarasas";
+            this.button4.Text = "View Items";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -185,29 +186,40 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 270);
+            this.button6.Location = new System.Drawing.Point(296, 324);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 43);
+            this.button6.Size = new System.Drawing.Size(83, 53);
             this.button6.TabIndex = 18;
-            this.button6.Text = "Prideti kategorija";
+            this.button6.Text = "Add Category";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(116, 270);
+            this.button7.Location = new System.Drawing.Point(296, 383);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(119, 43);
+            this.button7.Size = new System.Drawing.Size(83, 55);
             this.button7.TabIndex = 19;
-            this.button7.Text = "prideti preke";
+            this.button7.Text = "Add Item";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(385, 383);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 55);
+            this.button8.TabIndex = 20;
+            this.button8.Text = "View Comments";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // UserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 450);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -251,5 +263,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

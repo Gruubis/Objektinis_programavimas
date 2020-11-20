@@ -33,13 +33,16 @@ namespace GUI
             {
                 pictureBox1.Image = Image.FromFile(@GUI.Data.UsersRepository.LoggedInUser.GetImage());
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
+            }
                 label4.Text = Data.UsersRepository.LoggedInUser.GetFullName();
                 label5.Text = GUI.Data.UsersRepository.LoggedInUser.GetAge().ToString();
                 label6.Text = GUI.Data.UsersRepository.LoggedInUser.GetUserName();
                 label8.Text = GUI.Data.UsersRepository.LoggedInUser.GetBirthDate().ToString();
                 button3.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
-            }
+                button6.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+                button7.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+                button8.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -70,7 +73,7 @@ namespace GUI
     private void ChangeImageWindow_Closed(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile(GUI.Data.UsersRepository.LoggedInUser.GetImage());
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -111,6 +114,12 @@ namespace GUI
         {
             AddItemWindow aiw = new AddItemWindow();
             aiw.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            CommentsListWindow clw = new CommentsListWindow();
+            clw.ShowDialog();
         }
     }
 }

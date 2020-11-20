@@ -22,3 +22,4 @@ C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.commentWindow.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.ItemsAdminControl.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.addCategoryWindowcs.resources
 C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.AddItemWindow.resources
+C:\Users\rolik\source\repos\GUI\GUI\obj\Debug\GUI.CommentsListWindow.resources
