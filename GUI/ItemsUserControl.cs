@@ -13,20 +13,25 @@ namespace GUI
 {
     public partial class ItemsUserControl : ItemsPublicControl
     {
-        private UsersRepository repository = new UsersRepository();
-        private Item item;
+        private ItemsRepository repository = new ItemsRepository();
+        public Item item;
+        private Cart cart;
+        
         public ItemsUserControl(Item item) : base(item)
         {
+            cart = new Cart(0);
+            cart.OnPriceChanged += Cart_OnPriceChanged;
             InitializeComponent();
             this.item = item;
         }
-        public ItemsUserControl() 
-        {
-            InitializeComponent();
 
+        private void Cart_OnPriceChanged(object sender, CartEventArgs e)
+        {
+
+            
+            label1.Text = e.CurrentPrice.ToString();
         }
 
- 
         private void TitleLabel_Click(object sender, EventArgs e)
         {
 
@@ -50,6 +55,12 @@ namespace GUI
         {
             commentWindow cw = new commentWindow(item);
             cw.ShowDialog();
+
+        }
+        public void button3_Click(object sender, EventArgs e)
+        {
+            
+            cart.PriceAdded(double.Parse(PriceLabel.Text));
 
         }
     }

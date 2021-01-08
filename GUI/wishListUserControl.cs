@@ -13,7 +13,7 @@ namespace GUI
 {
     public partial class wishListUserControl : UserControl
     {
-        private UsersRepository repository = new UsersRepository();
+        private ItemsRepository repository = new ItemsRepository();
         private Item item;
         public wishListUserControl(Item item)
         {

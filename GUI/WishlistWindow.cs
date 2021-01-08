@@ -13,10 +13,10 @@ namespace GUI
 {
     public partial class WishlistWindow : Form
     {
-        private UsersRepository repository;
+        private ItemsRepository repository;
         public WishlistWindow()
         {
-            repository = new UsersRepository();
+            repository = new ItemsRepository();
             InitializeComponent();
             List<Item> WishItems = repository.GetWishlist(GUI.Data.UsersRepository.LoggedInUser.GetUserId());
             foreach(Item item in WishItems)

@@ -13,12 +13,14 @@ namespace GUI
 {
     public partial class ItemListWindow : Form
     {
-        private UsersRepository repository;
+        private ItemsRepository repository;
         public ItemListWindow()
         {
             InitializeComponent();
 
-            repository = new UsersRepository();
+           
+            
+            repository = new ItemsRepository();
             List<Category> categoriesList = repository.GetCategories();
             int width = SideMenuPanel.Width - 5;
             foreach ( Category category in categoriesList)
@@ -31,6 +33,7 @@ namespace GUI
                 SideMenuPanel.Controls.Add(categoryButton);
             }
         }
+
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
@@ -65,6 +68,31 @@ namespace GUI
                     flowLayoutPanel2.Controls.Add(iac);
                 }
             }
+        }
+
+        private void SideMenuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ItemListWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

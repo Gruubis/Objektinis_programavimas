@@ -13,7 +13,7 @@ namespace GUI
 {
     public partial class AddItemWindow : Form
     {
-        UsersRepository repository = new UsersRepository();
+        ItemsRepository repository = new ItemsRepository();
         public AddItemWindow()
         {
             InitializeComponent();

@@ -29,24 +29,24 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+/*            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();*/
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+/*            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox1.Size = new System.Drawing.Size(181, 218);
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);*/
             // 
             // TitleLabel
             // 
-            this.TitleLabel.Location = new System.Drawing.Point(218, 15);
+/*            this.TitleLabel.Location = new System.Drawing.Point(218, 15);*/
             // 
             // PriceLabel
             // 
-            this.PriceLabel.Location = new System.Drawing.Point(417, 179);
-            this.PriceLabel.Click += new System.EventHandler(this.PriceLabel_Click);
+/*            this.PriceLabel.Location = new System.Drawing.Point(417, 179);
+            this.PriceLabel.Click += new System.EventHandler(this.PriceLabel_Click);*/
             // 
             // button3
             // 
@@ -65,12 +65,12 @@ namespace GUI
             this.Controls.Add(this.button3);
             this.Name = "ItemsAdminControl";
             this.Size = new System.Drawing.Size(510, 224);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
+/*            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.TitleLabel, 0);
             this.Controls.SetChildIndex(this.PriceLabel, 0);
-            this.Controls.SetChildIndex(this.DescriptionLabel, 0);
+            this.Controls.SetChildIndex(this.DescriptionLabel, 0);*/
             this.Controls.SetChildIndex(this.button3, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+/*            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();*/
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,6 +78,6 @@ namespace GUI
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
+        protected System.Windows.Forms.Button button3;
     }
 }

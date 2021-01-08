@@ -34,6 +34,7 @@ namespace GUI
             this.PriceLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@ namespace GUI
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 204);
+            this.pictureBox1.Size = new System.Drawing.Size(181, 215);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -51,7 +52,7 @@ namespace GUI
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(288, 12);
+            this.TitleLabel.Location = new System.Drawing.Point(251, 13);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(57, 20);
             this.TitleLabel.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace GUI
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(465, 180);
+            this.PriceLabel.Location = new System.Drawing.Point(471, 172);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(51, 16);
             this.PriceLabel.TabIndex = 2;
@@ -81,25 +82,37 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(422, 182);
+            this.label1.Location = new System.Drawing.Point(428, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Kaina:";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(517, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Eur";
+            // 
             // ItemsPublicControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ItemsPublicControl";
-            this.Size = new System.Drawing.Size(543, 210);
+            this.Size = new System.Drawing.Size(597, 220);
+            this.Load += new System.EventHandler(this.ItemsPublicControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,6 +125,7 @@ namespace GUI
         protected System.Windows.Forms.Label TitleLabel;
         protected System.Windows.Forms.Label PriceLabel;
         protected System.Windows.Forms.Label DescriptionLabel;
-        private System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

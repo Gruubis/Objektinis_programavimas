@@ -11,17 +11,20 @@ using GUI.Data;
 
 namespace GUI
 {
-    public partial class ItemsAdminControl : ItemsUserControl
+    public partial class ItemsAdminControl : ItemsPublicControl
     {
-        private Item Item;
-        private UsersRepository repository = new UsersRepository();
+        public Item Item;
+        private ItemsRepository repository = new ItemsRepository();
         public ItemsAdminControl(Item item) : base (item)
         {
             InitializeComponent();
             this.Item = item;
 
         }
-
+        public ItemsAdminControl() : base()
+        {
+            InitializeComponent();
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

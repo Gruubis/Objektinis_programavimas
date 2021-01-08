@@ -13,7 +13,7 @@ namespace GUI
 {
     public partial class CommentsListWindow : Form
     {
-        private UsersRepository repository = new UsersRepository();
+        private ItemsRepository repository = new ItemsRepository();
         public CommentsListWindow()
         {
             InitializeComponent();

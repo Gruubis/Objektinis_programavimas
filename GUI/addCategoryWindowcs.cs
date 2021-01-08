@@ -13,7 +13,7 @@ namespace GUI
 {
     public partial class addCategoryWindowcs : Form
     {
-        UsersRepository repository = new UsersRepository();
+        ItemsRepository repository = new ItemsRepository();
         public addCategoryWindowcs()
         {
             InitializeComponent();

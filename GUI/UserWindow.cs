@@ -38,10 +38,14 @@ namespace GUI
                 label5.Text = GUI.Data.UsersRepository.LoggedInUser.GetAge().ToString();
                 label6.Text = GUI.Data.UsersRepository.LoggedInUser.GetUserName();
                 label8.Text = GUI.Data.UsersRepository.LoggedInUser.GetBirthDate().ToString();
+            if (GUI.Data.UsersRepository.LoggedInUser.GetAdmin() != "finans")
+            {
                 button3.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
                 button6.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
                 button7.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
                 button8.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+                button9.Visible = bool.Parse(GUI.Data.UsersRepository.LoggedInUser.GetAdmin());
+            }
             
         }
 
@@ -120,6 +124,11 @@ namespace GUI
         {
             CommentsListWindow clw = new CommentsListWindow();
             clw.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
